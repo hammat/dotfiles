@@ -1,0 +1,2 @@
+text/html;    elinks %s; nametemplate=%s.html
+text/html;     elinks -dump -default-mime-type text/html %s; needsterminal; copiousoutput;

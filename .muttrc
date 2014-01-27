@@ -1,0 +1,53 @@
+set imap_user = ""
+set smtp_url  = ""
+
+set from     = ""
+set realname = ""
+
+set folder    = ""
+set spoolfile = ""
+set postponed = ""
+
+set header_cache     = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+
+set move = no
+
+set sort     = "threads"
+set sort_aux = "last-date-received"
+
+bind index "^" imap-fetch-mail
+
+auto_view text/html
+
+# Number of lines jumped while scrolling down in a message
+set pager_context=15
+
+
+# Colors Headers
+color header green black "^from:"
+color header green black "^to:"
+color header green black "^cc:"
+color header green black "^date:"
+color header yellow black "^newsgroups:"
+color header yellow black "^reply-to:"
+color header brightcyan black "^subject:"
+color header red black "^x-spam-rule:"
+color header green black "^x-mailer:"
+color header yellow black "^message-id:"
+color header yellow black "^Organization:"
+color header yellow black "^Organisation:"
+color header yellow black "^User-Agent:"
+color header yellow black "^message-id: .*pine"
+color header yellow black "^X-Fnord:"
+color header yellow black "^X-WebTV-Stationery:"
+color header yellow black "^X-Message-Flag:"
+color header yellow black "^X-Spam-Status:"
+color header yellow black "^X-SpamProbe:"
+color header red black "^X-SpamProbe: SPAM"
+
+
+
+color attachment white black
+color error red black
