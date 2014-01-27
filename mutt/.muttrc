@@ -12,18 +12,24 @@ set header_cache     = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
 set certificate_file = ~/.mutt/certificates
 
-set move = no
+set sort         = "threads"
+set sort_aux     = "last-date-received"
 
-set sort     = "threads"
-set sort_aux = "last-date-received"
+set imap_check_subscribed
+set mail_check    = 60
+set move          = no
+set pager_context = 25
+set beep_new      = yes
+set fast_reply    = yes
 
+set signature     = ~/.mutt/signature
+set mailcap_path  = ~/.mutt/mailcap
+
+auto_view         text/html
+alternative_order text/plain text/html
+
+# Keyboard
 bind index "^" imap-fetch-mail
-
-auto_view text/html
-
-# Number of lines jumped while scrolling down in a message
-set pager_context=15
-
 
 # Colors Headers
 color header green black "^from:"
