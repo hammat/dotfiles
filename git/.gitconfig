@@ -1,0 +1,12 @@
+[user]
+	name  = Hammat
+	email = xxx@xxx.xx
+[core]
+	editor = vim
+[merge]
+	ff = false
+[color]
+	ui = true
+[alias]
+	st = status
+	br = branch
