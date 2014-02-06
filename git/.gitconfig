@@ -8,5 +8,6 @@
 [color]
 	ui = true
 [alias]
-	st = status
-	br = branch
+	st    = status
+	br    = branch
+	fetch = fetch -p
