@@ -1,0 +1,23 @@
+# Sidebar setup
+# Its width
+set sidebar_width=30
+# Is it visible ?
+set sidebar_visible=yes
+# Its delimiter
+set sidebar_delim="|"
+# Its color
+color sidebar_new yellow default
+
+# Key "b" toggles sidebar visibility
+macro index b '<enter-command>toggle sidebar_visible<enter>'
+macro pager b '<enter-command>toggle sidebar_visible<enter>'
+
+# And remap bounce-message function to "B"
+bind index B bounce-message
+
+bind index K sidebar-prev
+bind index J sidebar-next
+bind index L sidebar-open
+bind pager K sidebar-prev
+bind pager J sidebar-next
+bind pager L sidebar-open

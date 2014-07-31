@@ -1,0 +1,32 @@
+[general]
+ui = ttyui
+accounts = email1
+
+[Account email1]
+localrepository  = email1-Local
+remoterepository = email1-Remote
+
+[Repository email1-Local]
+type         = Maildir
+localfolders = ~/.maildir/email1
+nametrans = lambda folder: {'Drafts':  '[Gmail].Drafts',
+                            'Sent':    '[Gmail].Sent Mail',
+                            'Starred': '[Gmail].Starred',
+                            'Trash':   '[Gmail].Trash',
+                            'Archive': '[Gmail].All Mail',
+                            }.get(folder, folder)
+
+[Repository email1-Remote]
+type           = Gmail
+remoteuser     = email1
+realdelete     = no
+maxconnections = 3
+nametrans = lambda folder: {'[Gmail]/Drafts':    'Drafts',
+                            '[Gmail]/Sent Mail': 'Sent',
+                            '[Gmail]/Starred':   'Starred',
+                            '[Gmail]/Trash':     'Trash',
+                            '[Gmail]/All Mail':  'Archive',
+                            '[Gmail]/Spam':      'Spams'
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder not in ['[Gmail]/Important',
+                                            ]

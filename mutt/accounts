@@ -1,0 +1,15 @@
+set spoolfile = "~/.maildir/email1folder/INBOX"
+
+# Other special folders.
+set mbox      = "+email1folder/archive"
+set postponed = "+email1folder/drafts"
+
+# Mailboxes to show in the sidebar.
+mailboxes +email1folder/INBOX \
+          +email1folder/Archive \
+          +email1folder/Sent \
+          +email1folder/Drafts
+
+# Other special folders.
+set mbox      = "+email1folder/Archive"
+set postponed = "+email1folder/Drafts"

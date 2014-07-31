@@ -1,59 +1,43 @@
-set imap_user = ""
-set smtp_url  = ""
+# Paths
+set folder           = ~/.maildir               # mailbox location
+set alias_file       = ~/.mutt/alias         # where to store aliases
+set header_cache     = ~/.mutt/cache/headers # where to store headers
+set message_cachedir = ~/.mutt/cache/bodies  # where to store bodies
+set certificate_file = ~/.mutt/certificates  # where to store certs
+set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
+set tmpdir           = ~/.mutt/temp          # where to keep temp files
+set signature        = ~/.mutt/signature     # my signature file
 
-set from     = ""
-set realname = ""
+# Macros
+# Gmail-specific macros #
+## to delete more than 1 message, just mark them with "t" key and then do "d" on them
+macro index d ";s+[Gmail]/Trash<enter><enter>" "Move to Gmail's Trash"
+# delete message, but from pager (opened email)
+macro pager d "s+[Gmail]/Trash<enter><enter>"  "Move to Gmail's Trash"
+# undelete messages
+macro index u ";s+INBOX<enter><enter>"         "Move to Gmail's INBOX"
+macro pager u "s+INBOX<enter><enter>"          "Move to Gmail's INBOX"
 
-set folder    = ""
-set spoolfile = ""
-set postponed = ""
+# set from     = "email1"
+# set realname = "Mathieu Hamonic"
 
-set header_cache     = ~/.mutt/cache/headers
-set message_cachedir = ~/.mutt/cache/bodies
-set certificate_file = ~/.mutt/certificates
+set sort = "threads"
+set sort_aux = "last-date-received"
 
-set sort         = "threads"
-set sort_aux     = "last-date-received"
-
-set imap_check_subscribed
+#set imap_check_subscribed
 set mail_check    = 60
+set timeout       = 60
 set move          = no
 set pager_context = 25
 set beep_new      = yes
 set fast_reply    = yes
 
-set signature     = ~/.mutt/signature
-set mailcap_path  = ~/.mutt/mailcap
-
-auto_view         text/html
+auto_view text/html
 alternative_order text/plain text/html
 
 # Keyboard
 bind index "^" imap-fetch-mail
 
-# Colors Headers
-color header green black "^from:"
-color header green black "^to:"
-color header green black "^cc:"
-color header green black "^date:"
-color header yellow black "^newsgroups:"
-color header yellow black "^reply-to:"
-color header brightcyan black "^subject:"
-color header red black "^x-spam-rule:"
-color header green black "^x-mailer:"
-color header yellow black "^message-id:"
-color header yellow black "^Organization:"
-color header yellow black "^Organisation:"
-color header yellow black "^User-Agent:"
-color header yellow black "^message-id: .*pine"
-color header yellow black "^X-Fnord:"
-color header yellow black "^X-WebTV-Stationery:"
-color header yellow black "^X-Message-Flag:"
-color header yellow black "^X-Spam-Status:"
-color header yellow black "^X-SpamProbe:"
-color header red black "^X-SpamProbe: SPAM"
-
-
-
-color attachment white black
-color error red black
+source ~/.mutt/sidebar
+source ~/.mutt/colors
+source ~/.mutt/accounts
