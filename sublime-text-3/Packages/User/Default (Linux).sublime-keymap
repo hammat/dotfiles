@@ -1,0 +1,23 @@
+[
+    {
+        "keys": ["ctrl+shift+e"],
+        "command": "chain",
+        "args": {
+            "commands": [
+                ["create_pane", {"direction": "right"}],
+                ["travel_to_pane", {"direction": "right"}]
+            ]
+        }
+    },
+    {
+        "keys": ["ctrl+shift+o"],
+        "command": "chain",
+        "args": {
+            "commands": [
+                ["create_pane", {"direction": "down"}],
+                ["travel_to_pane", {"direction": "down"}]
+            ]
+        }
+    },
+    { "keys": ["ctrl+d"], "command": "destroy_pane", "args": {"direction": "self"} }
+]

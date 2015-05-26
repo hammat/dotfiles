@@ -2,10 +2,12 @@
 	"installed_packages":
 	[
 		"Alignment",
+		"Chain of Command",
 		"Dayle Rees Color Schemes",
 		"FileDiffs",
 		"Git",
 		"GitGutter",
+		"Origami",
 		"Sass"
 	]
 }
